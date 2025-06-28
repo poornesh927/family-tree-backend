@@ -8,7 +8,7 @@ const authRoutes = require("./routes/authRoutes");
 const familyRoutes = require("./routes/familyRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const userRoutes = require('./routes/userRoutes'); // ✅ Fixed import
-
+const adminRoutes = require('./routes/adminRoutes'); // add this
 const User = require("./models/User");
 const bcrypt = require("bcryptjs");
 
@@ -24,7 +24,7 @@ app.use("/api/upload", uploadRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/family", familyRoutes);
 app.use("/api/users", userRoutes); // ✅ user routes
-
+app.use('/api/admin', adminRoutes);
 // MongoDB connection + create default admin
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
