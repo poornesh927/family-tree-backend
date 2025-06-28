@@ -6,7 +6,12 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: String, default: "viewer" }, // 'admin' or 'viewer'
   family: { type: String, required: true },
-  approved: { type: Boolean, default: false } // admin will approve user
+  approved: { type: Boolean, default: false }, // admin will approve user
+  blocked: {
+  type: Boolean,
+  default: false
+}
+
 });
 
 module.exports = mongoose.model("User", UserSchema);

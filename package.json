@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "start": "nodemon server.js"
-},
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/poornesh927/family-tree-backend.git"

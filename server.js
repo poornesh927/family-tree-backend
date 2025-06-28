@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
+const path = require("path");
 
 const authRoutes = require("./routes/authRoutes");
 const familyRoutes = require("./routes/familyRoutes");
@@ -19,7 +20,8 @@ app.use("/api/upload", uploadRoutes);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/family", familyRoutes);
-
+// Access files via /uploads/file.png
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB Connected");
