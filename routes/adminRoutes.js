@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getAllUsers } = require('../controllers/adminController'); // create next
-// const { verifyAdmin } = require('../middleware/authMiddleware'); // optional middleware
+const { getAllUsers } = require('../controllers/adminController');
 
-// GET /api/admin/users
-// router.get('/users', verifyAdmin, getAllUsers); // You can remove `verifyAdmin` for now
+// Only add verifyAdmin if ready
+router.get('/users', getAllUsers);
 
-module.exports = router;router.get('/users', getAllUsers);
-
+module.exports = router;

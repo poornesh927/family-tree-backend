@@ -1,7 +1,10 @@
-// Dummy data for testing
-exports.getAllUsers = (req, res) => {
-  res.status(200).json([
-    { id: 1, name: "Poornesh" },
-    { id: 2, name: "Sample Admin" }
-  ]);
+const User = require('../models/User');
+
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select('-password'); // Exclude password if exists
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch users' });
+  }
 };
