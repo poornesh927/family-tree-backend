@@ -1,0 +1,16 @@
+# Node modules (never push this)
+node_modules/
+
+# Env file with secrets
+.env
+
+# Uploads folder (optional, if storing user files locally)
+uploads/
+
+# Logs (optional)
+*.log
+
+# OS/IDE/Editor junk
+.DS_Store
+Thumbs.db
+.vscode/
